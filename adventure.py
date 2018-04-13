@@ -1,9 +1,7 @@
 question = ""
 
 class game:
-    # global haveKey
     haveKey = False
-        # global fakeKeyHave
     fakeKeyHave = False
 
     def finished():
@@ -18,10 +16,6 @@ class game:
         
     def __init__(self):
         door = "Locked"
-        # global haveKey
-        # haveKey = False
-        # global fakeKeyHave
-        # fakeKeyHave = False
         name = input("Hello Adventurer what is your name? ")
         print("\n Somewhere in the distance you hear a voice saying, 'Welcome %s. If you wish to exit the dungeon you must find me to get the key. In total there are 9 rooms, you are in the first of these. The instructions are simple. When you are given a choice, you may type 'L' for Left, 'R' for Right, 'U' for up, and 'D' for down." % name)
         ready = input("Are you ready to go %s? " % name)
