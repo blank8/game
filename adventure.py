@@ -3,6 +3,7 @@ question = ""
 class game:
     haveKey = False
     fakeKeyHave = False
+    familyJewels = False
 
     def finished():
         print("\n Amazing! You completed this game(though very simplistic), still we have to commend you for your efforts!")
@@ -132,11 +133,15 @@ class room():
             room.zero()
         elif direction == "down":
             room.zero()
+        elif talk == "steal the family jewels":
+            game.familyJewles = True
+            room.four()
         else:
+            print("That is not a viable input")
             room.four()
 
     def five():
-        print("\n Room five... The room you've found looks to be an old dungeon room. The cells are looked and there seems yo be some treasure in the one to your right")
+        print("\n Room five... The room you've found looks to be an old dungeon room. The cells are locked and there seems to be some treasure in the one to your right")
         direction = input("Which way would you like to go? (Up or Down?)")
         direction = direction.lower()
         if direction == "u":
@@ -147,8 +152,14 @@ class room():
             room.one()
         elif direction == "down":
             room.one()
+        elif direction == "r":
+            print("You do not have the key to this cell")
+            room.five()
+        elif direction == "right":
+            print("You do not have the key to this cell")
+            room.five()
         else:
-            print("\n You go that way and run into a wall")
+            print("\n You run into a wall")
             room.five()
 
     def six():
@@ -209,3 +220,6 @@ class room():
 g = game()
 # g.start()
 print("\n done")
+
+
+
